@@ -1,0 +1,154 @@
+/*.header{*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  display: flex;*/
+/*  margin: 1px;*/
+/*  width: 99%;*/
+
+
+/*  background: yellow;*/
+/*  !*float: left;*!*/
+/*}*/
+
+/*.red{*/
+/*  background: blue;*/
+/*    margin: 10px;*/
+/*    float:left;*/
+/*    width:45%;*/
+/*    border: 1px solid black;*/
+/*}*/
+/*.TopMenu{*/
+/*  background: aquamarine;*/
+/*  margin: 10px;*/
+/*  float:left;*/
+/*  width:45%;*/
+/*  border: 1px solid black;*/
+
+/*}*/
+/*.batons{*/
+/*  background: blueviolet;*/
+/*  margin: 10px;*/
+/*  float:left;*/
+/*  width:45%;*/
+/*  border: 1px solid black;*/
+/*}*/
+
+/*.TopMenu li{*/
+/*  list-style: none;*/
+/*  margin-right: 75px;*/
+
+/*}*/
+/*.TopMenu li a{*/
+/*  display: block;*/
+/*  text-decoration: none;*/
+/*}*/
+
+
+/*input[type=text], input[type=password] {*/
+/*  width: 100%;*/
+/*  padding: 15px;*/
+/*  margin: 5px 0 22px 0;*/
+/*  display: inline-block;*/
+
+/*  !*background-color: rgba(43, 43, 43, 0.29);*!*/
+/*  !*color: white;*!*/
+/*  !*font-size: 16px;*!*/
+
+/*}*/
+
+/*.outer {*/
+/*  border: 1px solid black;*/
+/*  width: 100%;*/
+/*  float: left;*/
+/*  background-color: aqua;*/
+/*}*/
+
+/*.inner {*/
+/*  margin: 10px;*/
+/*  float:left;*/
+/*  width:45%;*/
+/*  border: 1px solid black;*/
+/*}*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+  font-size: 5vmin;
+  font-weight: 900;
+  margin: 20px;
+  width: 20%;
+}
+
+form {
+  width: 40%;
+}
+
+label {
+  font-size: 3vmin;
+  padding: 10px;
+}
+
+input {
+  font-size: 3vmin;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  width: 80%;
+}
+
+input:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.navigation ul{
+  display: flex;
+}
+
+.navigation ul li a {
+  color: black;
+  font-size: 3vmin;
+  margin: 0px 10px;
+  transition: 0.5s ease;
+}
+
+.navigation ul li a:hover {
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.register-btn a{
+  margin: 5px;
+  border:1px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 2.3vmin;
+  color: red;
+  transition: 0.5s ease;
+}
+
+.register-btn a:hover {
+  box-shadow: 0px 0px 10px black;
+  background: rgba(0, 0, 0, 0.3);
+  font-weight: 900;
+}

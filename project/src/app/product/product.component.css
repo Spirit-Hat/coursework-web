@@ -1,10 +1,9 @@
 .outerbox {
   background-color: lightblue;
   margin: 10px auto;
-  width: 350px;
+  width: 50%;
   position: relative;
   text-align: center;
-  display: flex;
 }
 
 .box {

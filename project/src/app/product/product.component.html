@@ -1,8 +1,10 @@
-11
+
 <div class="outerbox">
-<a *ngFor="let counter of product" >
+<a *ngFor="let counter of product"  routerLink="/detail/{{counter.id}}">>
   <div class="box">
+    <img src="./assets/1.jpg" alt="смайлик" height="90" width="90">
     <h4>{{counter.name}}</h4>
   </div>
 </a>
 </div>
+

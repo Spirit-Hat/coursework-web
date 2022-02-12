@@ -14,16 +14,15 @@ export class ProductService {
     return this.product
   }
 
+  getProductByID(id: number){
+    return this.product.find(element => element.id == id
+    );
+  }
 
   constructor() {
-    this.product.push(new product(1,'Test'))
-    this.product.push(new product(2,'Test'))
-    this.product.push(new product(3,'Tests'))
-    this.product.push(new product(4,'Tests'))
-    this.product.push(new product(5,'Tests'))
-    this.product.push(new product(6,'Tests'))
-
-
+    this.product.push(new product(1,'Test', "Penis "))
+    this.product.push(new product(2,'Test' ,"Suka"))
+    this.product.push(new product(3,'Tests' ,  "osat' chlen"))
 
   }
 }

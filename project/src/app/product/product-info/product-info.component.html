@@ -1,2 +1,36 @@
-<p>product-info works!</p>
-{{product.title}}
+<body>
+<article>
+  <picture>
+    <img src="{{product.logos}}">
+  </picture>
+  <div class="description">
+    <h1>
+      {{product.title}}
+    </h1>
+    <br>
+    <p>
+    {{product.description}}
+    </p>
+    <nav>
+      <div class="navigation">
+        <ul>
+          <li><a href="#"><i class="fas fa-home"></i>Description</a></li>
+          <li><a href="#"><i class="fas fa-shopping-cart"></i>Specifications</a></li>
+          <li><a href="#"><i class="fas fa-address-book"></i>Reviews</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="PriceCard">
+    <div class="Price">
+      <div class="OldPrice"></div>
+      {{product.oldPrice}}
+      {{product.Price}}
+    </div>
+    <button>Buy</button>
+    <button mat-icon-button aria-label="Example icon-button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </div>
+</article>
+</body>

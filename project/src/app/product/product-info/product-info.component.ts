@@ -11,6 +11,7 @@ import {ProductService} from "../../Service/product.service";
 export class ProductInfoComponent implements OnInit {
   product: any = '';
 
+
   constructor(
     private route: ActivatedRoute,
     private ProductService: ProductService
@@ -23,6 +24,7 @@ export class ProductInfoComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     console.log(id)
     this.product = this.ProductService.getProductByID(id)
+    console.log(this.product.logos)
   }
 
   ngOnInit(): void {

@@ -7,6 +7,10 @@ import { HomeComponent } from './home/home.component';
 import { TopBarComponent } from './home/top-bar/top-bar.component';
 import { ProductComponent } from './product/product.component';
 import { ProductInfoComponent } from './product/product-info/product-info.component';
+import { LoginComponent } from './login/login.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -14,12 +18,19 @@ import { ProductInfoComponent } from './product/product-info/product-info.compon
     HomeComponent,
     TopBarComponent,
     ProductComponent,
-    ProductInfoComponent
+    ProductInfoComponent,
+    LoginComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatIconModule,
+        // BrowserAnimationsModule
+
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

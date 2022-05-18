@@ -1,76 +1,4 @@
-/*.header{*/
-/*  justify-content: center;*/
-/*  align-items: center;*/
-/*  display: flex;*/
-/*  margin: 1px;*/
-/*  width: 99%;*/
-
-
-/*  background: yellow;*/
-/*  !*float: left;*!*/
-/*}*/
-
-/*.red{*/
-/*  background: blue;*/
-/*    margin: 10px;*/
-/*    float:left;*/
-/*    width:45%;*/
-/*    border: 1px solid black;*/
-/*}*/
-/*.TopMenu{*/
-/*  background: aquamarine;*/
-/*  margin: 10px;*/
-/*  float:left;*/
-/*  width:45%;*/
-/*  border: 1px solid black;*/
-
-/*}*/
-/*.batons{*/
-/*  background: blueviolet;*/
-/*  margin: 10px;*/
-/*  float:left;*/
-/*  width:45%;*/
-/*  border: 1px solid black;*/
-/*}*/
-
-/*.TopMenu li{*/
-/*  list-style: none;*/
-/*  margin-right: 75px;*/
-
-/*}*/
-/*.TopMenu li a{*/
-/*  display: block;*/
-/*  text-decoration: none;*/
-/*}*/
-
-
-/*input[type=text], input[type=password] {*/
-/*  width: 100%;*/
-/*  padding: 15px;*/
-/*  margin: 5px 0 22px 0;*/
-/*  display: inline-block;*/
-
-/*  !*background-color: rgba(43, 43, 43, 0.29);*!*/
-/*  !*color: white;*!*/
-/*  !*font-size: 16px;*!*/
-
-/*}*/
-
-/*.outer {*/
-/*  border: 1px solid black;*/
-/*  width: 100%;*/
-/*  float: left;*/
-/*  background-color: aqua;*/
-/*}*/
-
-/*.inner {*/
-/*  margin: 10px;*/
-/*  float:left;*/
-/*  width:45%;*/
-/*  border: 1px solid black;*/
-/*}*/
-
-
+@import url('https://fonts.googleapis.com/css2?family=Charm&family=Fruktur&family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 * {
   margin: 0;
@@ -87,23 +15,39 @@ ul {
 }
 
 header {
-  background-color: antiquewhite;
+  background-color: #F1F1F1;
   display: flex;
+  height: 175px;
   justify-content: space-between;
+  flex-direction: row;
   align-items: center;
   font-family: 'Poppins', sans-serif;
 }
 
 .logo {
-  font-size: 5vmin;
-  font-weight: 900;
-  margin: 20px;
+  margin-left: 4.19%;
   width: 20%;
+
+  /*font-size: 5vmin;*/
+  /*font-weight: 900;*/
+  /*margin: 20px;*/
+  /*background-image:url("/assets/lettuce1.svg");*/
+  /*width: 100%;*/
+}
+.logo a{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 5vmin;
+
+}
+.logo p{
+
+  font-family: 'Charm', cursive;
+  color: #008705;
 }
 
-form {
-  width: 40%;
-}
 
 label {
   font-size: 3vmin;

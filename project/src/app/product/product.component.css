@@ -1,19 +1,127 @@
-.outerbox {
-  background-color: lightblue;
-  margin: 10px auto;
-  width: 50%;
-  position: relative;
-  text-align: center;
+
+body{
+  margin-right: 11%;
+  margin-left: 11%;
 }
 
-.box {
-  background-color: lightgreen;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  margin: 2px;
+/*.outerbox {*/
+/*  background-color: lightblue;*/
+/*  margin: 10px auto;*/
+/*  width: 50%;*/
+/*  position: relative;*/
+/*  text-align: center;*/
+/*}*/
+
+/*.box {*/
+/*  background-color: lightgreen;*/
+/*  border-style: solid;*/
+/*  border-color: black;*/
+/*  border-width: 1px;*/
+/*  margin: 2px;*/
+/*  height: 100px;*/
+/*  width: 100px;*/
+/*  display: inline-block;*/
+/*  float: left;*/
+/*}*/
+
+
+
+.topTeachers {
+  margin: 25px 0 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.topTeachers h1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.topTeachers form .line-vertical {
+  border: 1px dashed grey;
+  margin: 0 30px;
+  /*flex: 1;*/
+  align-self: stretch;
+}
+
+.topTeachers form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /*padding-top: 40px;*/
+  margin: 40px 0 40px 0;
+
+}
+
+.topTeachers form select {
+  width: 9%;
+}
+
+.topTeachers form label {
+  font-size: 24px;
+  margin: 0 15px;
+}
+
+.topTeachers .teacher {
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  /*flex-direction: row;*/
+  /*justify-content: space-between;*/
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(264px, 1fr));
+  /*grid-template-columns: auto auto auto auto auto;*/
+}
+
+
+.topTeachers .teacher .teacherCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.topTeachers .teacher .teacherCard img {
+  width: 90%;
+  margin: 5%;
+  /*height: 200px;*/
+  border-radius: 50%;
+
+}
+
+.topTeachers .teacher .teacherCard h2, h3, h4 {
+  text-align: center;
+  padding: 0 50px;
+}
+
+/*.line {*/
+
+/*  border: 1px solid black;*/
+/*  margin: 200px auto;*/
+/*  width: 100%;*/
+/*!*}*!*/
+.line {
+  border-bottom: 1px solid black;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.lineWithText{
+  display: flex;
+  flex-direction: row;
   height: 100px;
-  width: 100px;
-  display: inline-block;
-  float: left;
+}
+.lines {
+  padding-top: 50px;
+  height: 1px;
+  border-bottom: 1px solid black;
+  justify-content: center;
+
+  width: 43%;
+}
+p{
+  padding-top: 35px;
+  text-align: center;
+  margin: 0 auto;
 }

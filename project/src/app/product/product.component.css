@@ -75,6 +75,12 @@
   /*border-radius: 50%;*/
 
 }
+.productCard .one{
+  width: 10%;
+  background-color: #008705;
+  align-self: flex-start;
+
+}
 .productCard p{
   padding-top: 10px;
   align-items: flex-start;

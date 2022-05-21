@@ -64,18 +64,40 @@
 }
 
 .content {
+  /*padding: 0 20px 10px;*/
   display: flex;
   flex-direction: row;
   /*justify-content: space-between;*/
+}
+
+.content-item {
+  padding: 5px;
+}
+
+div.img-item-content {
+  align-self: center;
+
+  width: max(300px, 30%);
+  /*border-bottom: 1px solid black;*/
+}
+
+img.img-product {
+
+  aspect-ratio: 1/1;
+  display: block;
+  inline-size: 100%;
+  object-fit: cover;
 }
 
 .productMainInfo {
   margin-left: 40px;
   display: flex;
   flex-direction: column;
+  width: 53%;
 }
 
 .productButtons {
+  width: max(300px, 75%);
   margin-top: 37px;
   display: flex;
   flex-direction: row;

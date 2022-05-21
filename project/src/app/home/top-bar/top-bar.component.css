@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm&family=Fruktur&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  background-color: #F1F1F1;
+  display: flex;
+  height: 175px;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+  margin-left: 4.19%;
+  width: 20%;
+}
+.logo a{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 5vmin;
+
+}
+.logo p{
+  font-family: 'Charm', cursive;
+  color: #008705;
+}
+
+
+label {
+  font-size: 3vmin;
+  padding: 10px;
+}
+
+input {
+  font-size: 3vmin;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  width: 80%;
+}
+
+input:hover {
+  background: #F1F1F1;
+}
+
+.navigation ul{
+  display: flex;
+}
+
+.navigation ul li a {
+  color: black;
+  font-size: 3vmin;
+  margin: 0px 10px;
+  transition: 0.5s ease;
+}
+
+.navigation ul li a:hover {
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.register-btn a{
+  margin: 5px;
+  border:1px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 2.3vmin;
+  color: red;
+  transition: 0.5s ease;
+}
+
+.register-btn a:hover {
+  box-shadow: 0px 0px 10px black;
+  background: rgba(0, 0, 0, 0.3);
+  font-weight: 900;
+}
+
+
+.headerSearch{
+  background-color: #ABCB9C;
+  display: flex;
+  height: 69px;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+.headerSearch select{
+  height: 54px;
+  width: 10%;
+  border-radius: 12px;
+  background-color: #499227;
+  /*margin-left: 11.3%;*/
+
+  color: black;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
+.headerSearch form{
+  width: 37.5%;
+}
+.headerSearch input {
+  font-size: 3vmin;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 10px;
+  width: 100%;
+  height: 54px;
+}
+.headerSearch nav{
+
+}
+.headerSearch nav button{
+  background: #499227;
+  margin: 5px;
+}

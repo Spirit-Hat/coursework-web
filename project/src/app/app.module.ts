@@ -12,6 +12,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import { FooterComponent } from './home/footer/footer.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FooterComponent } from './home/footer/footer.component';
         ReactiveFormsModule,
         MatButtonModule,
         MatIconModule,
+        MatCheckboxModule,
         // BrowserAnimationsModule
 
     ],

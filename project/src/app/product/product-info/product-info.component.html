@@ -70,29 +70,34 @@
         </div>
       </div>
       <div class="content-item">
-        <div class="descriptions">
-          2121212
-          21212
-          3334
-          222
-        </div>
         <div class="productStatus">
-          121233
+<!--          <div ="test(item)" [(ngModel)]="item.isChecked"></div>-->
+<!--          <input type="checkbox" checked="true">-->
+          <mat-checkbox class="checkbox" [color]="colors"
+                        [(ngModel)]="checked"></mat-checkbox>
+          <div> {{available}}  </div>
         </div>
         <div class="productCharacteristic">
-          Склад продукту/Країна походження:
+        <div>
+          <p>Країна походження</p>
+          <p>Україна</p>
+          <p>Харчова цінність:</p>
+          <p>на 100г: білки - 34,9г, жири - 17,3г, вуглеводи - 17,3г.
+            Калорійність - 381 Ккал.</p>
+        </div>
 
-          Україна.
         </div>
       </div>
     </div>
   </div>
-  <div class="content">
-    <div class="description">
-      <p>
-        78e978e9782e979797937819vddgdddddddddddddddddddddddgdddd
-      </p>
-    </div>
+  <div class="descriptions">
+    <h1>
+      Опис товару
+    </h1>
+    <p>
+      Інтернет магазин здорової їжі Fresh Store пропонує лише перевірені товари від надійних виробників. Ми хочемо полегшити ваше життя та допомогти харчуватися з максимальною користю для здоров’я. У нас ви можете знайти якісні органічні, а також безглютенові та безлактозні продукти, завдяки яким ваша їжа буде здоровою та смачною.
+      Ви можете слідкувати за всіма новинами та змінами у роботі мережі на офіційних сторінках  у Facebook та Instagram
+    </p>
   </div>
 </div>
 

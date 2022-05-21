@@ -10,7 +10,9 @@ import {ProductService} from "../../Service/product.service";
 })
 export class ProductInfoComponent implements OnInit {
   product: any = '';
-
+  checked = true;
+  available = "Є в наявності";
+  colors = 'accent'
 
   constructor(
     private route: ActivatedRoute,

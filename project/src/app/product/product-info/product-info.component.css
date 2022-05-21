@@ -58,7 +58,7 @@
 /*  font-weight: bold;*/
 /*}*/
 .product {
-  margin: 20px;
+  margin: 100px 0 0 5%;
   display: flex;
   flex-direction: column;
 }
@@ -101,6 +101,7 @@
 .button {
   user-select: none;
   cursor: pointer;
+  font-size:  2.5vmin;
 }
 
 .productButton {
@@ -136,7 +137,40 @@
   flex-direction: row;
   align-items: center
 }
+.productStatus{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+}
+.productStatus div{
+  padding-left: 15px;
+  font-size: 24px;
 
+}
+.productStatus .checkbox{
+  align-self: center;
+}
+.productCharacteristic{
+  margin-top: 30px;
+  background: #F8F8F8;
+}
+.productCharacteristic p{
+  margin-left: 10px;
+  padding-top: 15px;
+  font-size: 24px;
+}
+.descriptions{
+  margin-top: 80px;
+  margin-bottom: 180px;
+  display: flex;
+  flex-direction: column;
+}
+.descriptions h1{
+  text-align: center;
+}
+.descriptions p{
+  font-size: 24px;
+}
 @media screen and (max-width: 520px) {
   .product {
     flex-direction: column;

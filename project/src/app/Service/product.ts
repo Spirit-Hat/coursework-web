@@ -6,6 +6,7 @@ export class product {
   description!: string;
   oldPrice!:  string;
   Price!: string;
+  clicked: boolean =false;
 
   constructor(id: number, name: string ,title: string ,logo: string , description:string,oldPrice: string, Price:string) {
     this.id = id;
@@ -14,7 +15,7 @@ export class product {
     this.logos = logo;
     this.description = description;
     this.oldPrice = oldPrice;
-    this.Price = Price
+    this.Price = Price;
 
   }
 }

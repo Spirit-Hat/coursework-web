@@ -13,6 +13,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import { FooterComponent } from './home/footer/footer.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import { ShopingCardComponent } from './shoping-card/shoping-card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     ProductComponent,
     ProductInfoComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    ShopingCardComponent
   ],
     imports: [
         BrowserModule,

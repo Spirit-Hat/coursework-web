@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import { product } from 'src/app/Service/product';
 import {ProductService} from "../../Service/product.service";
+import {ObserverService} from "../../Service/observer.service";
 
 @Component({
   selector: 'app-product-info',
@@ -16,8 +17,8 @@ export class ProductInfoComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private ProductService: ProductService
-
+    private ProductService: ProductService,
+    private ObserverService: ObserverService
   ) {
     console.log("I am still alive ")
   }
@@ -32,6 +33,13 @@ export class ProductInfoComponent implements OnInit {
   ngOnInit(): void {
     console.log("hello world ")
     this.test()
+    this.ObserverService.favorites$.subscribe((count)=>this.tests(count))
+
+  }
+  tests(object:any){
+    console.log(object)
+    console.log(this.ObserverService.favorites$)
+    console.log(this.ObserverService.favorite)
   }
 
 }

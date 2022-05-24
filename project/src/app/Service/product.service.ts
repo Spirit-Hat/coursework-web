@@ -9,6 +9,10 @@ export class ProductService {
   product: product[] = [];
 
 
+  clicked(click:boolean, id:number) {
+    // @ts-ignore
+    this.getProductByID(id).clicked =click
+  }
 
   getProduct(){
     return this.product

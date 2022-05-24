@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ObserverService} from "../../Service/observer.service";
+import {ShoppingCard} from "../../Service/ShoppingCard";
 import {MatDialog} from '@angular/material/dialog';
 import {ShopingCardComponent} from "../../shoping-card/shoping-card.component";
+import {PopupService} from "../../Service/popup.service";
 
 @Component({
   selector: 'app-top-bar',
@@ -11,22 +12,19 @@ import {ShopingCardComponent} from "../../shoping-card/shoping-card.component";
 export class TopBarComponent implements OnInit {
 
   constructor(
-    private ObserverService: ObserverService,
-    public dialog: MatDialog
+    private ObserverService: ShoppingCard,
+    public dialog: MatDialog,
+    private PopupService :PopupService,
   ) {
   }
 
   ngOnInit(): void {
     this.ObserverService.favorites$.subscribe((count) => this.test(count))
   }
-
-  openDialog() {
-    console.log("Thise")
-    const dialogRef = this.dialog.open(ShopingCardComponent,{
-      width: '80%',
-      panelClass: 'custom-test'
-    });
+  openDialog(){
+    this.PopupService.openDialog();
   }
+
 
   test(object: any) {
     console.log(object)

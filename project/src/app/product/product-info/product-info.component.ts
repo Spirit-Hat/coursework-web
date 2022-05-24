@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import { product } from 'src/app/Service/product';
 import {ProductService} from "../../Service/product.service";
-import {ObserverService} from "../../Service/observer.service";
+import {ShoppingCard} from "../../Service/ShoppingCard";
+import {PopupService} from "../../Service/popup.service";
 
 @Component({
   selector: 'app-product-info',
@@ -18,12 +19,18 @@ export class ProductInfoComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private ProductService: ProductService,
-    private ObserverService: ObserverService
-  ) {
-    console.log("I am still alive ")
+    private ObserverService: ShoppingCard,
+    private PopupService :PopupService,
+
+  ) {}
+
+  clickByButtons(object:product){
+      this.ObserverService.changeCount(object)
+      this.PopupService.openDialog()
+
   }
 
-  test(){
+  getId(){
     const id = Number(this.route.snapshot.paramMap.get('id'));
     console.log(id)
     this.product = this.ProductService.getProductByID(id)
@@ -31,15 +38,14 @@ export class ProductInfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("hello world ")
-    this.test()
-    this.ObserverService.favorites$.subscribe((count)=>this.tests(count))
+    this.getId()
+    // this.ObserverService.favorites$.subscribe((count)=>this.tests(count))
 
   }
-  tests(object:any){
-    console.log(object)
-    console.log(this.ObserverService.favorites$)
-    console.log(this.ObserverService.favorite)
-  }
+  // tests(object:any){
+  //   console.log(object)
+  //   console.log(this.ObserverService.favorites$)
+  //   console.log(this.ObserverService.favorite)
+  // }
 
 }

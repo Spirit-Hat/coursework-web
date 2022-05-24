@@ -7,7 +7,7 @@ import {product} from "./product";
 export class ProductService {
 
   product: product[] = [];
-
+  fruits: object = {"fruits":[]}
 
   clicked(click:boolean, id:number) {
     // @ts-ignore
@@ -28,6 +28,8 @@ export class ProductService {
     this.product.push(new product(2,'Test' ,"me" , "./assets/1.jpg","hfuydghfudhu","200","150"))
     this.product.push(new product(3,'Tests' ,  "to die" , "./assets/1.jpg","fjdklkfdlfklfkdl","200","150"))
 
-
+    // @ts-ignore
+    this.fruits.fruits = this.product
+    console.log(this.fruits)
   }
 }

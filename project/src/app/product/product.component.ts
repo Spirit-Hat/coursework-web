@@ -13,7 +13,7 @@ export class ProductComponent implements OnInit {
   test(object:any){
   console.log(object)
   }
-  favorite(object:any){
+  favorite(object:product){
     this.ObserverService.changeCount(object)
   }
   constructor(private ProductService: ProductService , private ObserverService: ObserverService) {

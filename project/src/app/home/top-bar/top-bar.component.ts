@@ -23,6 +23,7 @@ export class TopBarComponent implements OnInit {
   openDialog() {
     console.log("Thise")
     const dialogRef = this.dialog.open(ShopingCardComponent,{
+      width: '80%',
       panelClass: 'custom-test'
     });
   }

@@ -9,6 +9,7 @@ import {ObserverService} from "../Service/observer.service";
 export class ShopingCardComponent implements OnInit {
 
   items = this.ObserverService.getItems();
+  priced = this.ObserverService.getPrice();
 
 
   constructor(

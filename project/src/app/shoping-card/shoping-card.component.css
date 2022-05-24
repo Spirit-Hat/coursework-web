@@ -39,7 +39,7 @@ body{
 
 }
 .line{
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #d2cdcd;
 
 }
 .item{
@@ -100,7 +100,7 @@ img{
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 30%;
+  width: 35%;
 }
 .popupFooter p{
   text-align: center;
@@ -108,7 +108,7 @@ img{
 .popupFooter .checkout{
   /*height: 50px;*/
   padding: 10px 0;
-  width: 80%;
+  width: 60%;
   font-size: 24px;
   background-color:#ABCB9C;
   text-align: center;
@@ -119,4 +119,10 @@ img{
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
+}
+.emptyCart{
+  font-size: 24px;
+}
+.emptyCart p{
+  text-align: center;
 }

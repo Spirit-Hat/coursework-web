@@ -18,7 +18,7 @@
   <div class="product" >
     <div class="productCard" *ngFor="let counter of product">
       <a>
-        <img src="./assets/cucumber.png" alt="Avatar" class="avatar"  routerLink="/detail/{{counter.id}}">
+        <img src="{{counter.logos}}" alt="Avatar" class="avatar"  routerLink="/detail/{{counter.id}}">
       </a>
       <div class="nameProduct">
         <p>Огірець</p>

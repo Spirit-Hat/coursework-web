@@ -5,7 +5,10 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
+  -webkit-box-sizing: border-box;
+  scroll-behavior: smooth;
 }
-
-html, body { height: 100%; }
+.custom-test mat-dialog-container{
+  background-color:#F1F1F1;
+}
 /*body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }*/

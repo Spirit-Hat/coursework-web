@@ -6,11 +6,14 @@ import {ProductInfoComponent} from "./product/product-info/product-info.componen
 import {AppComponent} from "./app.component";
 import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from "./login/login.component";
+import { ShopingCardComponent } from './shoping-card/shoping-card.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
   { path: 'detail/:id', component: ProductInfoComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'cart', component: ShopingCardComponent },
+
 
 ];
 

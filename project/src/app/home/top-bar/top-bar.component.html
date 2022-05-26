@@ -10,10 +10,10 @@
   <nav>
     <div class="navigation">
       <ul>
-        <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
-        <li><a href="#"><i class="fas fa-shopping-cart"></i>About</a></li>
-        <li><a href="#"><i class="fas fa-address-book"></i>Gallery</a></li>
-        <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -40,7 +40,7 @@
   <nav>
     <button mat-icon-button > <mat-icon>favorite</mat-icon></button>
     <button mat-icon-button > <mat-icon>person</mat-icon></button>
-    <button mat-icon-button > <mat-icon>shopping_cart</mat-icon></button>
+    <button mat-icon-button (click)="openDialog()"> <mat-icon>shopping_cart</mat-icon></button>
   </nav>
 
 </div>

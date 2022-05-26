@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../Service/product.service";
 import {product} from "../Service/product";
+import {ShoppingCard} from "../Service/ShoppingCard";
+import {PopupService} from "../Service/popup.service";
 
 @Component({
   selector: 'app-product',
@@ -10,8 +12,20 @@ import {product} from "../Service/product";
 export class ProductComponent implements OnInit {
   product: product[] = [];
 
+  favorite(object:product){
+    if(!object.clicked){
+      this.ObserverService.changeCount(object)
+    }
+    else{
+      this.PopupService.openDialog()
+    }
+  }
+  constructor(
+  private ProductService: ProductService ,
+  private ObserverService: ShoppingCard,
+  private PopupService :PopupService,
+  ) {
 
-  constructor(private ProductService: ProductService) {
   }
 
   ngOnInit(): void {

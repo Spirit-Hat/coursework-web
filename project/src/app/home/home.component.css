@@ -1,0 +1,55 @@
+body{
+  margin-right: 11%;
+  margin-left: 11%;
+}
+
+header{
+  width: 100%;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /*background-image: url("");*/
+}
+img {
+  position: absolute;
+  height: 700px;
+
+  width: 100%;
+  object-fit: cover;
+  /*z-index: 1;*/
+
+}
+header .Welcome{
+  position: absolute;
+  /*height: 100px;*/
+  /*z-index: 2;*/
+  width: 640px;
+  color: #f3ecec;
+  font-family: 'Montserrat', sans-serif;  font-style: normal;
+  /*font-weight: 900;*/
+  font-size: 24px;
+  line-height: 61px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.lineWithText{
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+}
+.lines {
+  padding-top: 50px;
+  height: 1px;
+  border-bottom: 1px solid black;
+  justify-content: center;
+
+  width: 40%;
+}
+p{
+  padding-top: 35px;
+  text-align: center;
+  margin: 0 auto;
+}

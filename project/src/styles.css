@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Charm&family=Fruktur&family=Montserrat:ital,wght@1,100&display=swap');
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+.custom-test mat-dialog-container{
+  background-color:#F1F1F1;
+}
+/*body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }*/

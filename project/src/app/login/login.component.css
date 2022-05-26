@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm&family=Fruktur&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Charm&family=Fruktur&family=Permanent+Marker&display=swap');
+
+* {box-sizing: border-box}
+.container {
+  margin-top: 25px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+
+  height: 500px;
+
+  /*font-family: 'Charm', cursive;*/
+  font-family: 'Permanent Marker', cursive;
+  color: #f3ecec;
+  font-size: 20px;
+
+}
+.h1{
+  text-align: center
+}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+
+  background-color: rgba(43, 43, 43, 0.29);
+  color: white;
+  font-size: 16px;
+
+}
+
+.registerbtn {
+  background-color: #50c8ff;
+  /*color: white;*/
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+.registerbtn:disabled {
+  background:gray;
+}
+.alert-danger{
+  color: red;
+}

@@ -21,9 +21,22 @@ export class ProductService {
     return this.product
   }
 
-  getProductByID(id: number) {
-    return this.product.find(element => element.id == id
-    );
+  // getProductByID(id: number) {
+  //   return this.product.find(element => element.id == id
+  //   );
+  // }
+  getProductByID(id: any) {
+    let itemObject:any
+    // @ts-ignore
+    this.keys.forEach(key =>{
+     // @ts-ignore
+       data.catalog[key].forEach(element =>{
+        if(element.id == id){
+           itemObject = element
+        }
+      })
+   })
+    return itemObject
   }
   testset(object: any  ){
     console.log("I am her ")

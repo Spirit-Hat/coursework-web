@@ -23,7 +23,7 @@ export class ShoppingCard {
   public delete(object: product) {
     console.log(object)
     //
-    // this.ProductService.clicked(false,object.id)
+    this.ProductService.clicked(false,object.id)
 
     var index = this.favorite.map(x => {
       return x.id;

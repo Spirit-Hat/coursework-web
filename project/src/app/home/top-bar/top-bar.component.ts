@@ -21,17 +21,18 @@ export class TopBarComponent implements OnInit {
     private ProductService: ProductService ,
 
   ) {
+    this.Selectively(this.keys[0])
   }
 
   ngOnInit(): void {
-    this.ObserverService.favorites$.subscribe((count) => this.test(count))
+    this.ObserverService.favorites$.subscribe((count) => this.Selectively(count))
   }
   openDialog(){
     this.PopupService.openDialog();
   }
 
 
-  test(object: any) {
+  Selectively(object: any) {
     console.log(object)
     this.ProductService.testset(object)
     // console.log(this.ObserverService.favorites$)

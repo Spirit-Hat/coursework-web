@@ -20,6 +20,8 @@ export class ProductComponent implements OnInit {
       this.PopupService.openDialog()
     }
   }
+
+
   constructor(
   private ProductService: ProductService ,
   private ObserverService: ShoppingCard,
@@ -29,8 +31,15 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ProductService.getProduct()
-      .forEach(element => this.product.push(element))
+    // this.ProductService.getProduct()
+    //   .forEach(element => this.product.push(element))
   }
+  ngDoCheck(){
+    this.product = this.ProductService.getProduct()
+    // this.ProductService.getProduct()
+    // .forEach(element => this.product.push(element))
+
+      }
+
 
 }

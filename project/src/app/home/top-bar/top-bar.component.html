@@ -24,15 +24,8 @@
 </header>
 
 <div class="headerSearch">
-  <select id="spec">
-    <option value="math">Math</option>
-    <option value="art">Art</option>
-    <option value="literature">Literature</option>
-    <option value="dataScience">Data Science</option>
-    <option value="history">History</option>
-    <option value="psychology">Psychology</option>
-    <option value="biology">Biology</option>
-    <option value="physics">Physics</option>
+  <select id="spec" (change)="test(selectedOption)" [(ngModel)]="selectedOption" >
+    <option  *ngFor="let key of keys"  value="{{key}}">{{key}} </option>
   </select>
   <form>
     <input type="text" placeholder="Search" id="searcher">

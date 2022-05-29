@@ -30,6 +30,9 @@ export class TopBarComponent implements OnInit {
   openDialog(){
     this.PopupService.openDialog();
   }
+  openProfile(){
+    this.PopupService.openDialogProfile()
+  }
 
 
   Selectively(object: any) {

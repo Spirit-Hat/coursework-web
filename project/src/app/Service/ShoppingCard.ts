@@ -21,8 +21,6 @@ export class ShoppingCard {
   }
 
   public delete(object: product) {
-    console.log(object)
-    //
     this.ProductService.clicked(false,object.id)
 
     var index = this.favorite.map(x => {
@@ -36,7 +34,8 @@ export class ShoppingCard {
   private calculate() {
     this.price = 0;
     this.favorite.forEach((object) => {
-      this.price = Number(this.price) + Number(object.price)
+      let price: number = parseFloat(object.price.replace(',', '.'));
+      this.price = Number(this.price) + Number(price)
     })
   }
 

@@ -3,6 +3,7 @@ import {ShoppingCard} from "../../Service/ShoppingCard";
 import {MatDialog} from '@angular/material/dialog';
 import {ShopingCardComponent} from "../../shoping-card/shoping-card.component";
 import {PopupService} from "../../Service/popup.service";
+import {ProductService} from "../../Service/product.service";
 
 @Component({
   selector: 'app-top-bar',
@@ -10,26 +11,35 @@ import {PopupService} from "../../Service/popup.service";
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent implements OnInit {
+   public keys: string[] = this.ProductService.getKeys();
+  selectedOption: any = this.keys[0];
 
   constructor(
     private ObserverService: ShoppingCard,
     public dialog: MatDialog,
     private PopupService :PopupService,
+    private ProductService: ProductService ,
+
   ) {
+    this.Selectively(this.keys[0])
   }
 
   ngOnInit(): void {
-    this.ObserverService.favorites$.subscribe((count) => this.test(count))
+    this.ObserverService.favorites$.subscribe((count) => this.Selectively(count))
   }
   openDialog(){
     this.PopupService.openDialog();
   }
+  openProfile(){
+    this.PopupService.openDialogProfile()
+  }
 
 
-  test(object: any) {
+  Selectively(object: any) {
     console.log(object)
-    console.log(this.ObserverService.favorites$)
-    console.log(this.ObserverService.favorite)
+    this.ProductService.testset(object)
+    // console.log(this.ObserverService.favorites$)
+    // console.log(this.ObserverService.favorite)
   }
 
 }

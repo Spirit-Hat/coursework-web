@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import {ShoppingCard} from "../Service/ShoppingCard";
 import {ProductService} from "../Service/product.service";
 import {product} from "../Service/product";
-import {ShoppingCard} from "../Service/ShoppingCard";
 import {PopupService} from "../Service/popup.service";
+import {FavoriteService} from "../Service/favorite.service";
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  selector: 'app-favorite',
+  templateUrl: './favorite.component.html',
+  styleUrls: ['./favorite.component.css']
 })
-export class ProductComponent implements OnInit {
+export class FavoriteComponent implements OnInit {
+
   product: product[] = [];
 
   favorite(object:product){
@@ -20,12 +22,11 @@ export class ProductComponent implements OnInit {
       this.PopupService.openDialog()
     }
   }
-
-
   constructor(
-  private ProductService: ProductService ,
-  private ObserverService: ShoppingCard,
-  private PopupService :PopupService,
+    private ProductService: ProductService ,
+    private ObserverService: ShoppingCard,
+    private PopupService :PopupService,
+    private FavoriteService :FavoriteService
   ) {
 
   }
@@ -35,11 +36,10 @@ export class ProductComponent implements OnInit {
     //   .forEach(element => this.product.push(element))
   }
   ngDoCheck(){
-    this.product = this.ProductService.getProduct()
+    this.product = this.FavoriteService.favorite
     // this.ProductService.getProduct()
     // .forEach(element => this.product.push(element))
 
-      }
-
+  }
 
 }

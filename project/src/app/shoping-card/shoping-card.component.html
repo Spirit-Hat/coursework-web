@@ -1,48 +1,51 @@
-
 <div class="popupHeader line font">
   <p>Card</p>
   <div mat-dialog-close><mat-icon>close</mat-icon></div>
 </div>
-
-<mat-dialog-content class="form">
-  <div *ngIf="items.length >0;else elseBlock">
-  <div class="shoppingCart" *ngFor="let item of items">
-    <div class="item line">
-      <div class="Buttons">
-        <button mat-icon-button (click)="deleteProduct(item)">
-          <mat-icon>close</mat-icon>
-        </button>
-        <button mat-icon-button>
-          <mat-icon>favorite</mat-icon>
-        </button>
-      </div>
-      <img src="{{item.logos}}" alt="Avatar" class="avatar">
-      <div class="descriptions font">
-        <p>{{item.title}}</p>
-      </div>
-      <div class="plus font">
-        <button>+</button>
-        <p>1</p>
-        <button>-</button>
-      </div>
-      <div class="price form">
-        <p>{{item.price}}</p>
-      </div>
-    </div>
-  </div>
-  <div class="popupFooter font">
+<div *ngIf="items.length >0;else elseBlock">
+  <mat-dialog-content class="form">
     <div>
-      <p>{{priced}} грн</p>
-      <div class="checkout">checkout</div>
+      <div class="shoppingCart" *ngFor="let item of items">
+        <div class="item line">
+          <div class="Buttons">
+            <button mat-icon-button (click)="deleteProduct(item)">
+              <mat-icon>close</mat-icon>
+            </button>
+            <button mat-icon-button (click)="Favorite(item)">
+              <mat-icon>favorite</mat-icon>
+            </button>
+          </div>
+          <img src="{{item.logos}}" alt="Avatar" class="avatar">
+          <div class="descriptions font">
+            <p>{{item.title}}</p>
+          </div>
+          <div class="plus font">
+            <button>+</button>
+            <p>1</p>
+            <button>-</button>
+          </div>
+          <div class="price form">
+            <p>{{item.price}}</p>
+          </div>
+        </div>
       </div>
-  </div>
-  </div>
-  <ng-template #elseBlock>
-    <div class="emptyCart">
-      <p>Cart is empty
-      But it's never too late to fix it :)
-    </p>
     </div>
-  </ng-template>
-
-</mat-dialog-content>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <div style="display: flex; justify-content: flex-end; width: 100%">
+      <div class="popupFooter font">
+        <p>{{priced}} грн</p>
+        <div class="checkout">
+          <p> checkout</p>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>
+<ng-template #elseBlock>
+  <div class="emptyCart">
+    <p>
+      Кошик порожній, але виправити це ніколи не пізно :)
+    </p>
+  </div>
+</ng-template>

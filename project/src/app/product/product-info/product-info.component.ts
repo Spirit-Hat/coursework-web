@@ -4,6 +4,7 @@ import { product } from 'src/app/Service/product';
 import {ProductService} from "../../Service/product.service";
 import {ShoppingCard} from "../../Service/ShoppingCard";
 import {PopupService} from "../../Service/popup.service";
+import {FavoriteService} from "../../Service/favorite.service";
 
 @Component({
   selector: 'app-product-info',
@@ -21,7 +22,7 @@ export class ProductInfoComponent implements OnInit {
     private ProductService: ProductService,
     private ObserverService: ShoppingCard,
     private PopupService :PopupService,
-
+    private FavoriteService:FavoriteService
   ) {}
 
   clickByButtons(object:product){
@@ -29,9 +30,15 @@ export class ProductInfoComponent implements OnInit {
       this.PopupService.openDialog()
 
   }
+  clickFavoriteButtons(object:product){
+    this.FavoriteService.changeCount(object)
+    // this.ObserverService.changeCount(object)
+    // this.PopupService.openDialog()
+
+  }
 
   getId(){
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = this.route.snapshot.paramMap.get('id');
     console.log(id)
     this.product = this.ProductService.getProductByID(id)
     console.log(this.product.logos)

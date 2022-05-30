@@ -16,6 +16,9 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import { ShopingCardComponent } from './shoping-card/shoping-card.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { GalleryComponent } from './home/gallery/gallery.component';
+import { FavoriteComponent } from './favorite/favorite.component';
+import { ProductGridComponent } from './product/product-grid/product-grid.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ProductInfoComponent,
     LoginComponent,
     FooterComponent,
-    ShopingCardComponent
+    ShopingCardComponent,
+    GalleryComponent,
+    FavoriteComponent,
+    ProductGridComponent,
+
   ],
     imports: [
         BrowserModule,

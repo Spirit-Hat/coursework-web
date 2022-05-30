@@ -8,6 +8,7 @@ import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from "./login/login.component";
 import { ShopingCardComponent } from './shoping-card/shoping-card.component';
 import {GalleryComponent} from "./home/gallery/gallery.component";
+import {FavoriteComponent} from "./favorite/favorite.component";
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -15,6 +16,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cart', component: ShopingCardComponent },
   { path: 'gallery', component: GalleryComponent },
+  { path: 'favorite', component: FavoriteComponent },
+
 
 
 

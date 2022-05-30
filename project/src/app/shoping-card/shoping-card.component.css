@@ -94,9 +94,12 @@ img{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
-  margin: 25px 25px;
+  justify-content: space-between;
+  width: 40%;
+  /*margin: 25px 25px;*/
+  padding: 10px;
   height: 50px;
+  margin: 10px 0;
 
 }
 .popupFooter div:first-child{

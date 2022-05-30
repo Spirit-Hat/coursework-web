@@ -1,3 +1,14 @@
+<div class="help">
+  <a
+    href="https://bank.gov.ua/ua/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi"
+    target="_blank" class="link" title="Допоможіть армії ЗСУ">
+    <p>
+    Допомогти ЗСУ || Support Ukraine</p>
+  </a>
+  <svg height="24" width="24" version="1.1" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><rect fill="#0057b7" height="72" width="240" x="0" y="48"></rect><rect fill="#ffd700" height="72" width="240" x="0" y="120"></rect></svg>
+
+
+</div>
 <header>
   <div class="logo">
 <!--    <a href="/" >-->
@@ -7,40 +18,32 @@
     </a>
   </div>
 
-  <nav>
+  <nav class="navigationMenu">
     <div class="navigation">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#">Додому</a></li>
+        <li><a href="#">Про нас</a></li>
+        <li><a routerLink="gallery">Галерея</a></li>
+        <li><a href="#">Контакти</a></li>
       </ul>
     </div>
   </nav>
-  <div class="register-btn">
-    <a routerLink="login">Regsiter</a>
-    <a href="#">Login</a>
-  </div>
+<!--  <div class="register-btn">-->
+<!--    <a routerLink="login">Regsiter</a>-->
+<!--    <a href="#">Login</a>-->
+<!--  </div>-->
 </header>
-
 <div class="headerSearch">
-  <select id="spec">
-    <option value="math">Math</option>
-    <option value="art">Art</option>
-    <option value="literature">Literature</option>
-    <option value="dataScience">Data Science</option>
-    <option value="history">History</option>
-    <option value="psychology">Psychology</option>
-    <option value="biology">Biology</option>
-    <option value="physics">Physics</option>
+  <select id="spec" (change)="Selectively(selectedOption)" [(ngModel)]="selectedOption" >
+    <option  *ngFor="let key of keys"  value="{{key}}">{{key}} </option>
   </select>
   <form>
-    <input type="text" placeholder="Search" id="searcher">
+    <input type="text" placeholder="Пошук" id="searcher">
   </form>
   <nav>
-    <button mat-icon-button > <mat-icon>favorite</mat-icon></button>
-    <button mat-icon-button > <mat-icon>person</mat-icon></button>
-    <button mat-icon-button (click)="openDialog()"> <mat-icon>shopping_cart</mat-icon></button>
+    <button mat-icon-button routerLink="favorite"> <mat-icon>favorite</mat-icon></button>
+    <button mat-icon-button  (click) ="openProfile()"> <mat-icon>person</mat-icon></button>
+    <button mat-icon-button  (click) ="openDialog()"> <mat-icon>shopping_cart</mat-icon></button>
   </nav>
 
 </div>

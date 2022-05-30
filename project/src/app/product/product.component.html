@@ -21,7 +21,7 @@
         <img src="{{counter.logos}}" alt="Avatar" class="avatar"  routerLink="/detail/{{counter.id}}">
       </a>
       <div class="nameProduct">
-        <p>Огірець</p>
+        <p>{{counter.title}}</p>
       </div>
       <div class="price" (click)="favorite(counter)">
         <svg *ngIf="counter.clicked==false;else elseBlock" xmlns="http://www.w3.org/2000/svg" width="29" height="29" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16" >
@@ -33,7 +33,7 @@
         </svg>
         </ng-template>
         <div>
-          <p>25грн</p>
+          <p>{{counter.price}}</p>
         </div>
       </div>
 

@@ -31,7 +31,7 @@ export class ProductInfoComponent implements OnInit {
   }
 
   getId(){
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = this.route.snapshot.paramMap.get('id');
     console.log(id)
     this.product = this.ProductService.getProductByID(id)
     console.log(this.product.logos)

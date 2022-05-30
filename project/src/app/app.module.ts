@@ -18,6 +18,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { GalleryComponent } from './home/gallery/gallery.component';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { ProductGridComponent } from './product/product-grid/product-grid.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
     ShopingCardComponent,
     GalleryComponent,
     FavoriteComponent,
+    ProductGridComponent,
 
   ],
     imports: [

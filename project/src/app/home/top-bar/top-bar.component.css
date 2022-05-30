@@ -135,3 +135,15 @@ input:hover {
   background: #499227;
   margin: 5px;
 }
+.help {
+
+  background-color: #8d8d84;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 40px;
+}
+.help svg{
+  padding-left: 4px;
+}

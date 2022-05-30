@@ -87,5 +87,14 @@ p{
   /*display: flex;*/
   /*height: max(160px, 50%);*/
 }
+.font{
+  font-size:  2.5vmin;
 
+}
+.about{
+  margin-bottom: 133px;
+}
+.about p{
+  text-align: left;
+}
 

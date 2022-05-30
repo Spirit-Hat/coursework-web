@@ -17,6 +17,7 @@ import { ShopingCardComponent } from './shoping-card/shoping-card.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { GalleryComponent } from './home/gallery/gallery.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { GalleryComponent } from './home/gallery/gallery.component';
     LoginComponent,
     FooterComponent,
     ShopingCardComponent,
-    GalleryComponent
+    GalleryComponent,
+    FavoriteComponent,
+
   ],
     imports: [
         BrowserModule,

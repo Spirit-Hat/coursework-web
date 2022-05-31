@@ -1,0 +1,122 @@
+<body>
+<div class="main-content">
+  <div class="main-content-view">
+    <div class="width">
+      <div class="content-order">
+        <h2 class="text">
+          Оформлення замовлення
+        </h2>
+        <div class="line"></div>
+        <p class="text">
+          Ваші контактні дані
+        </p>
+        <form [formGroup]="NewForm">
+        <div class="content-row">
+            <div class="column">
+              <div class="column">
+                <label>Прізвище
+
+                </label>
+                <input type="text" name="last-name" formControlName="LastName">
+                <div *ngIf="LastNameErrors()">
+                  <p> {{LastNameErrors()}}</p>
+                </div>
+              </div>
+              <div class="column">
+                <label>Мобільний телефон (+380)
+
+                </label>
+                <input type="tel" name="tel-contact" formControlName="phone">
+                <div *ngIf="PhoneErrors()">
+                  <p> {{PhoneErrors()}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="column">
+                <label>Ім'я
+
+                </label>
+                <input type="text" name="first-name" formControlName="FirstName">
+                <div *ngIf="FirstNameErrors()">
+                  <p> {{FirstNameErrors()}}</p>
+                </div>
+              </div>
+              <div class="column">
+                <label>Електронна пошта
+
+                </label>
+                <input type="email" name="email-contact "formControlName="email">
+              </div>
+              <div *ngIf="EmailErrors()">
+                <p> {{EmailErrors()}}</p>
+              </div>
+            </div>
+        </div>
+        </form>
+
+        <div class="orders">
+          <h3 class="text">
+            Ваше замовлення
+          </h3>
+
+          <p>
+            на суму {{priced}}₴
+          </p>
+        </div>
+
+        <div class="line"></div>
+        <div>
+          <div class="shoppingCart" *ngFor="let item of product">
+            <div class="item line">
+              <div class="Buttons">
+                <button mat-icon-button (click)="deleteProduct(item)">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </div>
+              <img src="{{item.logos}}" alt="Avatar" class="avatar">
+              <div class="descriptions font">
+                <p>{{item.title}}</p>
+              </div>
+              <div class="plus font">
+                <button>+</button>
+                <p>1</p>
+                <button>-</button>
+              </div>
+              <div class="price form">
+                <p>{{item.price}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <p class="text">
+          Доставка
+        </p>
+        <div class="content-input">
+          <div class="column select one">
+            <label> Ваш город
+              <select name="select-country">
+                <option>
+
+                </option>
+                <option>
+
+                </option>
+                <option>
+
+                </option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <p class="text">
+          <button [disabled]="NewForm.invalid" class="registerbtn" id="submit-button" mat-button color="primary"
+                  (click)="Test()">Register
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

@@ -21,10 +21,10 @@
   <nav class="navigationMenu">
     <div class="navigation">
       <ul>
-        <li><a href="#">Додому</a></li>
-        <li><a href="#">Про нас</a></li>
-        <li><a routerLink="gallery">Галерея</a></li>
-        <li><a href="#">Контакти</a></li>
+        <li><a routerLink="">Додому</a></li>
+        <li><a routerLink="" fragment="about">Про нас</a></li>
+<!--        <li><a routerLink="gallery">Галерея</a></li>-->
+        <li><a routerLink="" fragment="footer">Контакти</a></li>
       </ul>
     </div>
   </nav>
@@ -38,7 +38,7 @@
     <option  *ngFor="let key of keys"  value="{{key}}">{{key}} </option>
   </select>
   <form>
-    <input type="text" placeholder="Пошук" id="searcher">
+    <input [(ngModel)]="search" (input)="test()" autocomplete="off" type="text" name="header-search" placeholder="Пошук" id="searcher">
   </form>
   <nav>
     <button mat-icon-button routerLink="favorite"> <mat-icon>favorite</mat-icon></button>

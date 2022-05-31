@@ -19,6 +19,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { GalleryComponent } from './home/gallery/gallery.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { ProductGridComponent } from './product/product-grid/product-grid.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ProductGridComponent } from './product/product-grid/product-grid.compon
     GalleryComponent,
     FavoriteComponent,
     ProductGridComponent,
+    OrderComponent,
 
   ],
     imports: [

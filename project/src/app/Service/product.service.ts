@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {product} from "./product";
 import data from "../../assets/products.json";
+import {Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +9,20 @@ import data from "../../assets/products.json";
 export class ProductService {
 
   product: product[] = [];
+  filtred: product[] = [];
   keys: string[];
+
+  public mock$ = new Subject<number>();
 
   clicked(click: boolean, id: number) {
     // @ts-ignore
     this.getProductByID(id).clicked = click
   }
-  getKeys(){
+
+  getKeys() {
     return this.keys;
   }
+
   getProduct() {
     return this.product
   }
@@ -26,26 +32,54 @@ export class ProductService {
   //   );
   // }
   getProductByID(id: any) {
-    let itemObject:any
+    let itemObject: any
     // @ts-ignore
-    this.keys.forEach(key =>{
-     // @ts-ignore
-       data.catalog[key].forEach(element =>{
-        if(element.id == id){
-           itemObject = element
+    this.keys.forEach(key => {
+      // @ts-ignore
+      data.catalog[key].forEach(element => {
+        if (element.id == id) {
+          itemObject = element
         }
       })
-   })
+    })
     return itemObject
   }
-  testset(object: any  ){
-    console.log("I am her ")
+
+  testset(key: string) {
+
+    // console.log(key)
     // @ts-ignore
-    console.log(data.catalog[object])
+    // console.log(data.catalog[key])
     // @ts-ignore
-    this.product = data.catalog[object]
+    this.product = data.catalog[key]
+    this.mock$.next(1);
+
   }
+
   private loadJson() {
+
+  }
+
+  find(find: string) {
+    this.product = [];
+
+    this.keys.forEach(key => {
+      if (key.toLowerCase() == find.toLowerCase()) {
+        // @ts-ignore
+        this.product = data.catalog[key]
+      } else {
+        // @ts-ignore
+        data.catalog[key].forEach(element => {
+          // console.log(element.title.slice(0,3))
+          // console.log("--------------------------")
+
+          if (element.title.slice(0,find.length).toLowerCase() === find.toLowerCase()) {
+            this.product.push(element);
+          }
+        })
+      }
+    })
+    this.mock$.next(1);
 
   }
 

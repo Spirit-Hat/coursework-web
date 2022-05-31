@@ -1,11 +1,10 @@
 <body>
 <div class="listProduct">
   <nav>
-    <button>Все</button>
-    <button>Хіти продажу</button>
-    <button>Новинки</button>
+    <button (click)="all() " [ngClass]="all_clicked ? 'clicked' : ''">Все</button>
+    <button (click)="hitSale()"  [ngClass]="hit_sale_clicked ? 'clicked' : ''" >Хіти продажу</button>
+    <button (click)="new()" [ngClass]=" new_clicked ? 'clicked' : ''">Новинки</button>
   </nav>
 <app-product-grid [product] ="product" (buttonClick)="favorite($event)"></app-product-grid>
 </div>
-
 </body>

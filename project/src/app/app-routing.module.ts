@@ -9,6 +9,7 @@ import {LoginComponent} from "./login/login.component";
 import { ShopingCardComponent } from './shoping-card/shoping-card.component';
 import {GalleryComponent} from "./home/gallery/gallery.component";
 import {FavoriteComponent} from "./favorite/favorite.component";
+import {OrderComponent} from "./order/order.component";
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -17,6 +18,8 @@ const routes: Routes = [
   { path: 'cart', component: ShopingCardComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'favorite', component: FavoriteComponent },
+  { path: 'order', component: OrderComponent },
+
 
 
 

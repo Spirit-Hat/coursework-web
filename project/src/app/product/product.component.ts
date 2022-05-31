@@ -44,6 +44,7 @@ export class ProductComponent implements OnInit {
   // }
   hitSale(){
     if(!this.hit_sale_clicked) {
+      this.hit_sale_clicked =true
       const storage: product[] = []
       this.product.forEach(index => {
         if (index.bestseller) {
@@ -55,6 +56,7 @@ export class ProductComponent implements OnInit {
       this.product = [];
       this.product = storage;
     }else {
+      this.hit_sale_clicked =false
       this.product =[]
       this.product =this.filtred
     }

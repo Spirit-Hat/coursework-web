@@ -37,7 +37,7 @@
     <div style="display: flex; justify-content: flex-end; width: 100%">
       <div class="popupFooter font">
         <p>{{priced}} грн</p>
-        <div class="checkout">
+        <div class="checkout" mat-dialog-close routerLink="order">
           <p> checkout</p>
         </div>
       </div>
@@ -51,3 +51,4 @@
     </p>
   </div>
 </ng-template>
+

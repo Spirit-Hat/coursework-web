@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {product} from "./product";
 import data from "../../assets/products.json";
+import {Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,10 @@ import data from "../../assets/products.json";
 export class ProductService {
 
   product: product[] = [];
+  filtred: product[] = [];
   keys: string[];
+
+  public mock$ = new Subject<number>();
 
   clicked(click: boolean, id: number) {
     // @ts-ignore
@@ -42,11 +46,14 @@ export class ProductService {
   }
 
   testset(key: string) {
-    console.log(key)
+
+    // console.log(key)
     // @ts-ignore
     // console.log(data.catalog[key])
     // @ts-ignore
     this.product = data.catalog[key]
+    this.mock$.next(1);
+
   }
 
   private loadJson() {
@@ -57,7 +64,7 @@ export class ProductService {
     this.product = [];
 
     this.keys.forEach(key => {
-      if (key == find) {
+      if (key.toLowerCase() == find.toLowerCase()) {
         // @ts-ignore
         this.product = data.catalog[key]
       } else {
@@ -72,6 +79,8 @@ export class ProductService {
         })
       }
     })
+    this.mock$.next(1);
+
   }
 
   constructor() {

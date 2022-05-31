@@ -53,7 +53,7 @@ export class TopBarComponent implements OnInit {
     // console.log(this.ObserverService.favorites$)
     // console.log(this.ObserverService.favorite)
   }
-  ngDoCheck() {
+  test(){
     console.log("I a,m ")
     if(this.search != ""){
       console.log(this.search)
@@ -62,6 +62,16 @@ export class TopBarComponent implements OnInit {
     else{
       this.ProductService.testset(this.selectedOption)
     }
+  }
+  ngDoCheck() {
+    // console.log("I a,m ")
+    // if(this.search != ""){
+    //   console.log(this.search)
+    //   this.ProductService.find(this.search)
+    // }
+    // else{
+    //   this.ProductService.testset(this.selectedOption)
+    // }
   }
 
 

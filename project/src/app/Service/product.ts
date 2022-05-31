@@ -7,7 +7,8 @@ export class product {
   oldPrice!:  string;
   price!: string;
   clicked: boolean =false;
-
+  bestseller: boolean =false;
+  new:  boolean =false;
   constructor(id: number, name: string ,title: string ,logo: string , description:string,oldPrice: string, Price:string) {
     this.id = id;
     this.name = name;

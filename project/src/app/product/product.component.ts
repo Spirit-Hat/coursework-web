@@ -36,6 +36,7 @@ export class ProductComponent implements OnInit {
   }
   ngDoCheck(){
     this.product = this.ProductService.getProduct()
+    console.log(this.product)
     // this.ProductService.getProduct()
     // .forEach(element => this.product.push(element))
 

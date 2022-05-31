@@ -14,9 +14,11 @@ export class ProductService {
     // @ts-ignore
     this.getProductByID(id).clicked = click
   }
-  getKeys(){
+
+  getKeys() {
     return this.keys;
   }
+
   getProduct() {
     return this.product
   }
@@ -26,27 +28,50 @@ export class ProductService {
   //   );
   // }
   getProductByID(id: any) {
-    let itemObject:any
+    let itemObject: any
     // @ts-ignore
-    this.keys.forEach(key =>{
-     // @ts-ignore
-       data.catalog[key].forEach(element =>{
-        if(element.id == id){
-           itemObject = element
+    this.keys.forEach(key => {
+      // @ts-ignore
+      data.catalog[key].forEach(element => {
+        if (element.id == id) {
+          itemObject = element
         }
       })
-   })
+    })
     return itemObject
   }
-  testset(object: any  ){
-    console.log("I am her ")
+
+  testset(key: string) {
+    console.log(key)
     // @ts-ignore
-    console.log(data.catalog[object])
+    // console.log(data.catalog[key])
     // @ts-ignore
-    this.product = data.catalog[object]
+    this.product = data.catalog[key]
   }
+
   private loadJson() {
 
+  }
+
+  find(find: string) {
+    this.product = [];
+
+    this.keys.forEach(key => {
+      if (key == find) {
+        // @ts-ignore
+        this.product = data.catalog[key]
+      } else {
+        // @ts-ignore
+        data.catalog[key].forEach(element => {
+          // console.log(element.title.slice(0,3))
+          // console.log("--------------------------")
+
+          if (element.title.slice(0,find.length).toLowerCase() === find.toLowerCase()) {
+            this.product.push(element);
+          }
+        })
+      }
+    })
   }
 
   constructor() {

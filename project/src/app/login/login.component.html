@@ -4,7 +4,7 @@
       <h1>Register form </h1>
       <hr>
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" id="email" required autocomplete="off"
+      <input type="text" placeholder="Введіть електронну пошту" name="email" id="email" required autocomplete="off"
              formControlName="email">
       <div *ngIf="email.invalid && email.touched"
            class="alert-danger" >
@@ -15,7 +15,7 @@
 
 
       <label for="login"><b>Login</b></label>
-      <input type="text" placeholder="Enter Login" name="login" id="login" required autocomplete="off"
+      <input type="text" placeholder="Введіть логін" name="login" id="login" required autocomplete="off"
              formControlName="Login">
       <div *ngIf="Login.invalid && (Login.dirty || Login.touched)"
            class="alert alert-danger">
@@ -25,7 +25,7 @@
       </div>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" id="psw" required autocomplete="off"
+      <input type="password" placeholder="Введіть пароль" name="psw" id="psw" required autocomplete="off"
              formControlName="password">
       <div *ngIf="password.invalid && (password.dirty || password.touched)"
            class="alert alert-danger">
@@ -34,7 +34,7 @@
         </div>
       </div>
       <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required
+      <input type="password" placeholder="Повторіть пароль" name="psw-repeat" id="psw-repeat" required
              autocomplete="off" formControlName="Repeatpassword">
       <div *ngIf="repeat.invalid && (repeat.dirty || repeat.touched)"
            class="alert alert-danger">
@@ -42,7 +42,8 @@
           {{ RepeatErrors()}}
         </div>
       </div>
-      <button [disabled]="NewForm.invalid" class="registerbtn" id="submit-button" mat-button color="primary" (click)="Test()">Register</button>
+      <button [disabled]="NewForm.invalid" class="registerbtn" id="submit-button" mat-button color="primary" (click)="Test()">Реєстрація
+      </button>
     </div>
   </form>
 </div>

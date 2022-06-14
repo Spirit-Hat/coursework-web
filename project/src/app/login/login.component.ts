@@ -37,20 +37,20 @@ export class LoginComponent implements OnInit {
   // }
 
   LoginErrors() {
-    return this.Login.errors?.['required'] ? 'Need to fill' :  this.Login.errors?.['pattern'] ? 'You can use a-Z' :''
+    return this.Login.errors?.['required'] ? 'Потрібно заповнити' :  this.Login.errors?.['pattern'] ? 'Ви можете використовувати a-Z 0-9' :''
   }
 
   EmailErrors() {
-    return this.email.errors?.['required'] ? 'Need to fill' :
-      this.email.errors?.['email'] ? 'Incorrect email' : ''
+    return this.email.errors?.['required'] ? 'Потрібно заповнити' :
+      this.email.errors?.['email'] ? 'Неправильна електронна адреса' : ''
   }
 
   PasswordErrors() {
-    return this.password.errors?.['required'] ? 'Need to fill' : this.password.errors?.['pattern'] ? 'You can use a-Z' : ''
+    return this.password.errors?.['required'] ? 'Потрібно заповнити' : this.password.errors?.['pattern'] ? 'Ви можете використовувати a-Z 0-9' : ''
   }
 
   RepeatErrors() {
-    return this.repeat.errors?.['required'] ? 'Need to fill' : this.repeat.errors?.['pattern'] ? 'You can use a-Z' : ''
+    return this.repeat.errors?.['required'] ? 'Потрібно заповнити' : this.repeat.errors?.['pattern'] ? 'Ви можете використовувати a-Z 0-9' : ''
   }
 
   Test(){

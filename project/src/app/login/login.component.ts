@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {ProductService} from "../Service/product.service";
 
 @Component({
   selector: 'app-login',
@@ -11,14 +12,16 @@ export class LoginComponent implements OnInit {
 
   NewForm: FormGroup | any
 
+  constructor(    private ProductService: ProductService,
+  ) {
+
+  }
+
   ngOnInit() {
     this.NewForm = new FormGroup({
       'Login': new FormControl(null, [Validators.required,
         Validators.pattern('^[\\w\\d]{3,20}$')]),
-      'email': new FormControl(null, [Validators.required,Validators.email]),
       'password': new FormControl(null, [Validators.required,
-        Validators.pattern('^[\\w\\d]{3,20}$')]),
-      'Repeatpassword': new FormControl(null, [Validators.required,
         Validators.pattern('^[\\w\\d]{3,20}$')])
     })
     // console.log(this.EmailErrors())
@@ -55,6 +58,11 @@ export class LoginComponent implements OnInit {
 
   Test(){
     alert("success");
+    // console.log(this.NewForm.value.Login)
+    // console.log(this.NewForm.value.password)
+
+    this.ProductService.userAuthorization(this.NewForm.value.Login,this.NewForm.value.password)
+    // console.warn(this.NewForm.value)
   }
 
 

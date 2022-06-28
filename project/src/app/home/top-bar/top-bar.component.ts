@@ -22,19 +22,34 @@ export class TopBarComponent implements OnInit {
   //     this.StyleHelper.popup_list = false;
   //   }
   // }
-  public keys: string[] = this.ProductService.getKeys();
-  selectedOption: any = this.keys[0];
-  public search:string =""
+  public keys: string[] = [];
+  selectedOption: any;
+  public search: string = ""
+
   constructor(
     private ObserverService: ShoppingCard,
     public dialog: MatDialog,
     private PopupService: PopupService,
     private ProductService: ProductService,
   ) {
-    this.Selectively(this.keys[0])
+    // this.Selectively(this.keys[0])
   }
 
-  ngOnInit(): void {
+   testAsinc() {
+    console.log(this.keys)
+    this.ProductService.getCatalog().subscribe((response) => {
+      response.forEach(item => {
+        this.keys.push(item.categories)
+      })
+      this.selectedOption = this.keys[0]
+      this.Selectively(this.keys[0])
+    });
+    console.log(this.keys)
+
+  }
+
+  async ngOnInit() {
+    await this.testAsinc()
     // this.ObserverService.favorites$.subscribe((count) => this.Selectively(count))
   }
 
@@ -53,26 +68,16 @@ export class TopBarComponent implements OnInit {
     // console.log(this.ObserverService.favorites$)
     // console.log(this.ObserverService.favorite)
   }
-  test(){
+
+  test() {
     console.log("I a,m ")
-    if(this.search != ""){
+    if (this.search != "") {
       console.log(this.search)
       this.ProductService.find(this.search)
-    }
-    else{
+    } else {
       this.ProductService.testset(this.selectedOption)
     }
   }
-  ngDoCheck() {
-    // console.log("I a,m ")
-    // if(this.search != ""){
-    //   console.log(this.search)
-    //   this.ProductService.find(this.search)
-    // }
-    // else{
-    //   this.ProductService.testset(this.selectedOption)
-    // }
-  }
 
 
-  }
+}

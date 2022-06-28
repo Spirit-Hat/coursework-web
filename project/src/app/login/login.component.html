@@ -1,17 +1,9 @@
 <div class="">
   <form [formGroup]="NewForm">
     <div class="container">
-      <h1>Register form </h1>
+      <h1>Login </h1>
       <hr>
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Введіть електронну пошту" name="email" id="email" required autocomplete="off"
-             formControlName="email">
-      <div *ngIf="email.invalid && email.touched"
-           class="alert-danger" >
-        <div *ngIf="EmailErrors()" id = "EmailErrors">
-          {{EmailErrors()}}
-        </div>
-      </div>
+
 
 
       <label for="login"><b>Login</b></label>
@@ -33,16 +25,9 @@
           <p> {{PasswordErrors()}}</p>
         </div>
       </div>
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Повторіть пароль" name="psw-repeat" id="psw-repeat" required
-             autocomplete="off" formControlName="Repeatpassword">
-      <div *ngIf="repeat.invalid && (repeat.dirty || repeat.touched)"
-           class="alert alert-danger">
-        <div *ngIf=" RepeatErrors()">
-          {{ RepeatErrors()}}
-        </div>
-      </div>
-      <button [disabled]="NewForm.invalid" class="registerbtn" id="submit-button" mat-button color="primary" (click)="Test()">Реєстрація
+
+      <button [disabled]="NewForm.invalid" class="registerbtn" id="submit-button" mat-button color="primary"
+              (click)="Test()">Авторизація
       </button>
     </div>
   </form>

@@ -13,6 +13,16 @@ export class FavoriteService {
   get favorite(): product[] {
     return this._favorite;
   }
+  favorireSaved(){
+  if(this.ProductService.getFavoriteList() != null){
+    // @ts-ignore
+    this.ProductService.getFavoriteList().subscribe((response)=>{
+      response.forEach(item => {
+        this._favorite.push(new product(item.id,item.title,item.logos,item.price))
+      })
+    })
+  }
+  }
   private findById(object: number) {
     let bool = false;
     this.favorite.forEach(test => {
@@ -38,5 +48,8 @@ export class FavoriteService {
 
   constructor(
     private ProductService: ProductService ,
-  ) { }
+  ) {
+    this.favorireSaved()
+  }
+
 }

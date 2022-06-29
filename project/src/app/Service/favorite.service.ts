@@ -15,6 +15,7 @@ export class FavoriteService {
   }
   favorireSaved(){
   if(this.ProductService.getFavoriteList() != null){
+    this._favorite = []
     // @ts-ignore
     this.ProductService.getFavoriteList().subscribe((response)=>{
       response.forEach(item => {
@@ -51,5 +52,7 @@ export class FavoriteService {
   ) {
     this.favorireSaved()
   }
+  ngOnInit() {
+  }
 
-}
+  }

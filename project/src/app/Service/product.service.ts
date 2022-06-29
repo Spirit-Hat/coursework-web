@@ -4,6 +4,7 @@ import data from "../../assets/products.json";
 import {catchError, Observable, Subject} from "rxjs";
 import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
+import {FavoriteService} from "./favorite.service";
 
 export class categories {
 
@@ -28,9 +29,20 @@ export class ProductService {
   product: product[] = [];
   filtred: product[] = [];
   keys: string[] = [];
-  autorized: number = -1;
+  private _autorized: number = -1;
+
+  public plug$ = new Subject<number>()
 
   public mock$ = new Subject<number>();
+
+
+  public get autorized(): number {
+    return this._autorized;
+  }
+
+  set autorized(value: number) {
+    this._autorized = value;
+  }
 
   clicked(click: boolean, id: number) {
     // @ts-ignore
@@ -65,7 +77,10 @@ export class ProductService {
     this.product = data.catalog[key]
     this.mock$.next(1);
   }
-
+  plugNext(user: number){
+    console.log("jiufjeduifjwiojdfowi9hj")
+    this.plug$.next(user)
+  }
   private loadJson() {
 
   }
@@ -103,7 +118,8 @@ export class ProductService {
     this.http.get<number>(`${this.API_URL}/message/test${test}`)
       .subscribe((response)=>{
         console.log(response)
-        this.autorized = response;
+        this._autorized = response;
+        this.plugNext(this._autorized)
       })
   }
   getFavoriteList():Observable<any[]> {
@@ -111,8 +127,10 @@ export class ProductService {
 
   }
 
-  constructor(private http: HttpClient) {
-    this.userAuthorization("User1","hello")
+  constructor(
+    private http: HttpClient,
+  ) {
+    // this.userAuthorization("User1","hello")
      this.getCatalog()
     this.keys = Object.keys(data.catalog);
     // console.log(this.keys)

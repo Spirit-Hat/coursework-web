@@ -34,6 +34,7 @@ export class ShoppingCard {
   private calculate() {
     this.price = 0;
     this.favorite.forEach((object) => {
+      console.log(object.price)
       let price: number = parseFloat(object.price.replace(',', '.'));
       this.price = Number(this.price) + Number(price)
     })

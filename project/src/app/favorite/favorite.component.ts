@@ -13,7 +13,7 @@ import {FavoriteService} from "../Service/favorite.service";
 export class FavoriteComponent implements OnInit {
 
   product: product[] = [];
-
+  userautorized: number = -1;
   favorite(object:product){
     if(!object.clicked){
       this.ObserverService.changeCount(object)
@@ -32,11 +32,19 @@ export class FavoriteComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.ProductService.plug$.subscribe((count)=>this.test(count))
     // this.ProductService.getProduct()
     //   .forEach(element => this.product.push(element))
   }
+  test(a: any){
+    console.log(a)
+    this.FavoriteService.favorireSaved()
+
+  }
   ngDoCheck(){
     this.product = this.FavoriteService.favorite
+
+    // this.FavoriteService.favorireSaved()
     // this.ProductService.getProduct()
     // .forEach(element => this.product.push(element))
 

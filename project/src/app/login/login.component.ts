@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {ProductService} from "../Service/product.service";
 
 @Component({
   selector: 'app-login',
@@ -11,14 +12,16 @@ export class LoginComponent implements OnInit {
 
   NewForm: FormGroup | any
 
+  constructor(    private ProductService: ProductService,
+  ) {
+
+  }
+
   ngOnInit() {
     this.NewForm = new FormGroup({
       'Login': new FormControl(null, [Validators.required,
         Validators.pattern('^[\\w\\d]{3,20}$')]),
-      'email': new FormControl(null, [Validators.required,Validators.email]),
       'password': new FormControl(null, [Validators.required,
-        Validators.pattern('^[\\w\\d]{3,20}$')]),
-      'Repeatpassword': new FormControl(null, [Validators.required,
         Validators.pattern('^[\\w\\d]{3,20}$')])
     })
     // console.log(this.EmailErrors())
@@ -37,24 +40,29 @@ export class LoginComponent implements OnInit {
   // }
 
   LoginErrors() {
-    return this.Login.errors?.['required'] ? 'Need to fill' :  this.Login.errors?.['pattern'] ? 'You can use a-Z' :''
+    return this.Login.errors?.['required'] ? 'Потрібно заповнити' :  this.Login.errors?.['pattern'] ? 'Ви можете використовувати a-Z 0-9' :''
   }
 
   EmailErrors() {
-    return this.email.errors?.['required'] ? 'Need to fill' :
-      this.email.errors?.['email'] ? 'Incorrect email' : ''
+    return this.email.errors?.['required'] ? 'Потрібно заповнити' :
+      this.email.errors?.['email'] ? 'Неправильна електронна адреса' : ''
   }
 
   PasswordErrors() {
-    return this.password.errors?.['required'] ? 'Need to fill' : this.password.errors?.['pattern'] ? 'You can use a-Z' : ''
+    return this.password.errors?.['required'] ? 'Потрібно заповнити' : this.password.errors?.['pattern'] ? 'Ви можете використовувати a-Z 0-9' : ''
   }
 
   RepeatErrors() {
-    return this.repeat.errors?.['required'] ? 'Need to fill' : this.repeat.errors?.['pattern'] ? 'You can use a-Z' : ''
+    return this.repeat.errors?.['required'] ? 'Потрібно заповнити' : this.repeat.errors?.['pattern'] ? 'Ви можете використовувати a-Z 0-9' : ''
   }
 
   Test(){
     alert("success");
+    // console.log(this.NewForm.value.Login)
+    // console.log(this.NewForm.value.password)
+
+    this.ProductService.userAuthorization(this.NewForm.value.Login,this.NewForm.value.password)
+    // console.warn(this.NewForm.value)
   }
 
 
